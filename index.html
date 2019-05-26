@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			body{
+				perspective: 1000px;
+			}
+			.mofang{
+				width: 200px;
+				height: 200px;
+				margin: 300px auto;
+				/*保留子元素3d效果*/
+				transform-style: preserve-3d;
+				/*相对定位*/
+				position: relative;
+				
+				
+				/*动画名字，时间，无限滚动*/
+				animation: donghua 1s infinite;
+				
+				
+			}
+			.mofang .a1{
+				width: 100px;
+				height:100px;
+				/*保留子元素3d效果*/
+				transform-style: preserve-3d;
+				/*相对定位*/
+				position: absolute;
+				left: 50px;
+				top: 50px;
+				
+				
+				/*动画名字，时间，无限滚动*/
+				animation: donghua 1s infinite;
+			}
+			
+			@keyframes donghua{
+				from{
+					transform: rotate3d(1,1,0,0deg);
+				}
+				to{
+					transform: rotate3d(1,1,0,360deg);
+				}
+			}
+			
+			.mofang .child{
+				width: 200px;
+				height: 200px;
+				/*绝对定位*/
+				position: absolute;
+				left: 0;
+				top: 0;
+				/*透明度*/
+				opacity: 0.6;
+				/*所有过渡效果花费2s*/
+				transition: all 2s;
+			}
+			.mofang .child1{
+				width: 100px;
+				height: 100px;
+				/*绝对定位*/
+				position: absolute;
+				left: 0;
+				top: 0;
+				/*透明度*/
+				opacity: 0.6;
+				/*所有过渡效果花费2s*/
+				transition: all 4s;
+			}
+			
+			.front{
+				/*插入背景图*/
+				background-image: url(img/img1.jfif);
+				/*背景图不重复*/
+				background-repeat: no-repeat;
+				/*背景图位置居中*/
+				background-position: center;
+				/*背景图大小:100% ，宽自定义*/
+				background-size: 100% auto;
+				
+				transform: translateZ(100px);
+			}/*鼠标点击*/
+			.front1{
+				/*插入背景图*/
+				background-image: url(img/1525400116965.jpg);
+				/*背景图不重复*/
+				background-repeat: no-repeat;
+				/*背景图位置居中*/
+				background-position: center;
+				/*背景图大小:100% ，宽自定义*/
+				background-size: 100% auto;
+				
+				transform: translateZ(50px);
+			}
+			.mofang:hover .front{
+				/*往Z轴移动200px*/
+				transform: translateZ(200px);
+			}
+			
+		.back{
+				background-image: url(img/img2.jfif);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: translateZ(-100px);
+			}
+			.back1{
+				background-image: url(img/4163e6ab177c4284a69e6340e8d2171b.jpeg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: translateZ(-50px);
+			}
+			
+			.mofang:hover .back{
+				transform: translateZ(-200px);
+			}
+			.left{
+				background-image: url(img/img3.jfif);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: rotateY(-90deg) translateZ(100px);
+			}
+			.left1{
+				background-image: url(img/21.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: rotateY(-90deg) translateZ(50px);
+			}
+			.mofang:hover .left{
+				transform: rotateY(-90deg) translateZ(200px);
+			}
+			.right{
+				background-image: url(img/img4.jfif);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: rotateY(90deg) translateZ(100px);
+			}
+			.right1{
+				background-image: url(img/201206191116426249.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: rotateY(90deg) translateZ(50px);
+			}
+			.mofang:hover .right{
+				transform: rotateY(90deg) translateZ(200px);
+			}
+			.top{
+				background-image: url(img/img5.jfif);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: rotateX(90deg) translateZ(100px);
+			}
+			.top1{
+				background-image: url(img/1525400116965.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: rotateX(90deg) translateZ(50px);
+			}
+			.mofang:hover .top{
+				transform: rotateX(90deg) translateZ(200px);
+			}
+			.bottom{
+				background-image: url(img/img6.jfif);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: rotateX(-90deg) translateZ(100px);
+			}
+			.bottom1{
+				background-image: url(img/006lpPzYly1fxcnr3mso3j30k00u075i.jpg);
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: 100% auto;
+				transform: rotateX(-90deg) translateZ(50px);
+			}
+			
+			.mofang:hover .bottom{
+				transform: rotateX(-90deg) translateZ(200px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="mofang">
+			<div class="child front"></div>
+			<div class="child back"></div>
+			<div class="child left"></div>
+			<div class="child right"></div>
+			<div class="child top"></div>
+			<div class="child bottom"></div>
+			<div class="a1">
+			<div class="child1 front1"></div>
+			<div class="child1 back1"></div>
+			<div class="child1 left1"></div>
+			<div class="child1 right1"></div>
+			<div class="child1 top1"></div>
+			<div class="child1 bottom1"></div>
+		</div>
+		
+			
+		</div>
+		
+		
+	</body>
+</html>
